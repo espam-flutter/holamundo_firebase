@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "840087008020",
+    "project_id": "holamundo-f3029",
+    "storage_bucket": "holamundo-f3029.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840087008020:android:0245b5f9cb039f8a438801",
+        "android_client_info": {
+          "package_name": "com.example.holamundo_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsbKokNTwInheKTCUL8aJnf--c79XX8XQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
