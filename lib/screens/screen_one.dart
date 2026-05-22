@@ -28,6 +28,7 @@ class _ScreenOneState extends State<ScreenOne> {
   }
 
   Future<void> _cargarEstadoAnalytics() async {
+    // Obtiene el identificador de Analytics de la instancia actual.
     final id = await _analytics.appInstanceId;
     if (!mounted) return;
     setState(() {
@@ -44,6 +45,7 @@ class _ScreenOneState extends State<ScreenOne> {
 
     try {
       // Evento personalizado visible en DebugView / informes de Analytics.
+      // Envía un evento personalizado a Firebase Analytics.
       await _analytics.logEvent(
         name: 'demo_interaccion',
         parameters: <String, Object>{
@@ -54,7 +56,7 @@ class _ScreenOneState extends State<ScreenOne> {
         },
       );
 
-      // Propiedad de usuario asociada al dispositivo/sesión en el perfil de Analytics.
+      // Define una propiedad de usuario que puede verse en Firebase Analytics.
       await _analytics.setUserProperty(
         name: 'nivel_demo',
         value: _visitas > 3 ? 'avanzado' : 'principiante',

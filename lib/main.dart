@@ -1,8 +1,10 @@
 // SDK de Firebase Analytics.
 import 'package:firebase_analytics/firebase_analytics.dart';
+// SDK base de Firebase para inicializar la app con la configuración de proyecto.
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+// Archivo generado por FlutterFire CLI con las credenciales/configuración por plataforma.
 import 'package:holamundo_firebase/firebase_options.dart';
 import 'package:holamundo_firebase/screens/screen_one.dart';
 import 'package:holamundo_firebase/screens/screen_three.dart';
@@ -10,11 +12,14 @@ import 'package:holamundo_firebase/screens/screen_two.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Inicializa Firebase con la configuración correspondiente a la plataforma actual.
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
+  // Obtiene la instancia singleton de Firebase Analytics.
   final analytics = FirebaseAnalytics.instance;
+  // Activa la recopilación de datos en Analytics.
   await analytics.setAnalyticsCollectionEnabled(true);
-  // Evento automático de sesión; ayuda a ver actividad en Tiempo real / DebugView.
+  // Envía un evento de apertura de app para facilitar el seguimiento en Firebase.
   await analytics.logAppOpen();
 
   if (kDebugMode) {
@@ -42,10 +47,13 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    // Observador que permite que Firebase Analytics registre cambios de pantalla.
     analyticsObserver = FirebaseAnalyticsObserver(
       analytics: widget.analytics,
       onError: (error) {
-        debugPrint('FirebaseAnalyticsObserver error: ${error.code} ${error.message}');
+        debugPrint(
+          'FirebaseAnalyticsObserver error: ${error.code} ${error.message}',
+        );
       },
     );
 
@@ -68,10 +76,7 @@ class _MyAppState extends State<MyApp> {
         return null;
     }
 
-    return MaterialPageRoute<void>(
-      settings: settings,
-      builder: (_) => page,
-    );
+    return MaterialPageRoute<void>(settings: settings, builder: (_) => page);
   }
 
   @override

@@ -15,6 +15,7 @@ import 'package:flutter/foundation.dart'
 /// );
 /// ```
 class DefaultFirebaseOptions {
+  // Proporciona las opciones de Firebase adecuadas según la plataforma en ejecución.
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       return web;
@@ -46,6 +47,7 @@ class DefaultFirebaseOptions {
     }
   }
 
+  // Configuración Firebase para la plataforma Web.
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyDSBUsft86l9vuI81F9CB-VJQaSQo8Z2wk',
     appId: '1:840087008020:web:3afeb4ba2b624425438801',
@@ -56,6 +58,7 @@ class DefaultFirebaseOptions {
     measurementId: 'G-F2GE916HT1',
   );
 
+  // Configuración Firebase para Android.
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCsbKokNTwInheKTCUL8aJnf--c79XX8XQ',
     appId: '1:840087008020:android:0245b5f9cb039f8a438801',
@@ -64,6 +67,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'holamundo-f3029.firebasestorage.app',
   );
 
+  // Configuración Firebase para iOS.
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCaU14e7Iy71lMaWMMB9TRjSVzdCuNcXCc',
     appId: '1:840087008020:ios:527cea3e996a05ac438801',
