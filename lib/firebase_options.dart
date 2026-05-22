@@ -23,10 +23,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -65,5 +62,14 @@ class DefaultFirebaseOptions {
     messagingSenderId: '840087008020',
     projectId: 'holamundo-f3029',
     storageBucket: 'holamundo-f3029.firebasestorage.app',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCaU14e7Iy71lMaWMMB9TRjSVzdCuNcXCc',
+    appId: '1:840087008020:ios:527cea3e996a05ac438801',
+    messagingSenderId: '840087008020',
+    projectId: 'holamundo-f3029',
+    storageBucket: 'holamundo-f3029.firebasestorage.app',
+    iosBundleId: 'com.example.holamundoFirebase',
   );
 }
